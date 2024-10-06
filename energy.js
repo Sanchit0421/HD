@@ -8,7 +8,7 @@ const energyUsage = [
     { device: 'Air Conditioner', usage: 350 },
 ];
 
-// Endpoint to get energy usage
+// Route to get energy usage
 router.get('/', (req, res) => {
     res.json(energyUsage);
 });

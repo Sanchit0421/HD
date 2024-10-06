@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Sanchit0421/HD.git'
+                git branch: 'main', credentialsId: '4e5ee5cf-5633-4ea1-9d96-229a1802119b', url: 'https://github.com/Sanchit0421/HD '
             }
         }
         stage('Build') {

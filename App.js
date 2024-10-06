@@ -1,6 +1,8 @@
 // src/App.js
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from './Dashboard';
+import EnergyDetails from './EnergyDetails'; // New component for energy details
 
 const App = () => {
     // Mock energy usage data
@@ -11,9 +13,16 @@ const App = () => {
     ];
 
     return (
-        <div>
-            <Dashboard energyData={energyData} />
-        </div>
+        <Router>
+            <Switch>
+                <Route exact path="/">
+                    <Dashboard energyData={energyData} />
+                </Route>
+                <Route path="/energy-details">
+                    <EnergyDetails energyData={energyData} />
+                </Route>
+            </Switch>
+        </Router>
     );
 };
 

@@ -1,8 +1,15 @@
 // src/Dashboard.js
 import React from 'react';
-import { Container, Grid, Card, CardContent, Typography } from '@mui/material';
+import { Container, Grid, Card, CardContent, Typography, Button } from '@mui/material';
+import { useHistory } from 'react-router-dom'; // Import useHistory
 
 const Dashboard = ({ energyData }) => {
+    const history = useHistory(); // Hook to access history
+
+    const handleDetailsClick = () => {
+        history.push('/energy-details'); // Navigate to the details page
+    };
+
     return (
         <Container>
             <Typography variant="h4" gutterBottom>
@@ -22,9 +29,13 @@ const Dashboard = ({ energyData }) => {
                     </Grid>
                 ))}
             </Grid>
+            <Button variant="contained" color="primary" onClick={handleDetailsClick}>
+                View Energy Details
+            </Button>
         </Container>
     );
 };
 
 export default Dashboard;
+
 
